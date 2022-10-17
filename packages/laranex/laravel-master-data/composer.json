@@ -1,0 +1,46 @@
+{
+    "name": "laranex/laravel-master-data",
+    "description": "A Laravel package to easily get data from allowed models",
+    "keywords": [
+        "laranex",
+        "laravel-master-data"
+    ],
+    "homepage": "https://github.com/laranex/laravel-master-data",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Soe Thura",
+            "email": "thixpin@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Laranex\\LaravelMasterData\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Laranex\\LaravelMasterData\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Laranex\\LaravelMasterData\\LaravelMasterDataServiceProvider"
+            ],
+            "aliases": {
+                "LaravelMasterData": "Laranex\\LaravelMasterData\\LaravelMasterDataFacade"
+            }
+        }
+    }
+}
