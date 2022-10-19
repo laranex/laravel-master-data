@@ -23,6 +23,10 @@ class User extends Authenticatable
         'password',
     ];
 
+    public $unpublished = [
+        'password',
+    ];
+
     /**
      * The attributes that should be hidden for serialization.
      *

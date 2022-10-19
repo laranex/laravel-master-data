@@ -21,7 +21,10 @@ class ModelHelper
     public static function getModelColumns($slug)
     {
         $model = self::getModel($slug);
+        $unpublished = isset($model->unpublished) ? $model->unpublished : [];
+        $hidden = array_merge($model->getHidden(), $unpublished);
         $columns = $model->getConnection()->getSchemaBuilder()->getColumnListing($model->getTable());
+        $columns = array_values(array_diff($columns, $hidden));
 
         return $columns;
     }
